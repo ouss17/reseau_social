@@ -1,3 +1,85 @@
-body {
-    background-color: lightgray;
+:root {
+    --green-color: #93d50a;
+    --red-color: #ff4141;
+    --grey-color: #d9d9d9;
+    --blue-color: #003764;
+    --skyBlue-color: rgb(29, 155, 240);
+    --lighter-grey: #adadad;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.layout {
+    display: flex;
+}
+
+.left-layout,
+.right-layout {
+    width: 25%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.left-layout{
+    border-right: 1px solid var(--grey-color);
+}
+
+.right-layout{
+    border-left: 1px solid var(--grey-color);
+}
+
+.center-layout {
+    width: 50%;
+    height: 100vh;
+}
+
+.self-layout {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 30px 0;
+    font-size: 1.5em;
+}
+
+.self-layout .img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+}
+
+.self-layout .img::before {
+    border-top: 1px solid var(--grey-color);
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;
+}
+
+.self-layout .img img {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    border-radius: 65px;
+}
+
+.self-layout .pseudo {
+    margin: 30px 0;
+    font-weight: bold;
+}
+
+.self-layout .username {
+    color: #7d7d7d;
 }

@@ -83,6 +83,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean')]
     private $Private;
 
+    #[ORM\Column(type: 'boolean')]
+    private $IsDesactivate;
+
+    #[ORM\Column(type: 'date', nullable: true)]
+    private $DateDesactivate;
+
+    #[ORM\Column(type: 'string', length: 500)]
+    private $ProfilePicture;
+
+    #[ORM\Column(type: 'string', length: 500)]
+    private $BannerPicture;
+
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private $UpdateDatetime;
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
@@ -533,6 +548,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPrivate(bool $Private): self
     {
         $this->Private = $Private;
+
+        return $this;
+    }
+
+    public function isIsDesactivate(): ?bool
+    {
+        return $this->IsDesactivate;
+    }
+
+    public function setIsDesactivate(bool $IsDesactivate): self
+    {
+        $this->IsDesactivate = $IsDesactivate;
+
+        return $this;
+    }
+
+    public function getDateDesactivate(): ?\DateTimeInterface
+    {
+        return $this->DateDesactivate;
+    }
+
+    public function setDateDesactivate(?\DateTimeInterface $DateDesactivate): self
+    {
+        $this->DateDesactivate = $DateDesactivate;
+
+        return $this;
+    }
+
+    public function getProfilePicture(): ?string
+    {
+        return $this->ProfilePicture;
+    }
+
+    public function setProfilePicture(string $ProfilePicture): self
+    {
+        $this->ProfilePicture = $ProfilePicture;
+
+        return $this;
+    }
+
+    public function getBannerPicture(): ?string
+    {
+        return $this->BannerPicture;
+    }
+
+    public function setBannerPicture(string $BannerPicture): self
+    {
+        $this->BannerPicture = $BannerPicture;
+
+        return $this;
+    }
+
+    public function getUpdateDatetime(): ?\DateTimeInterface
+    {
+        return $this->UpdateDatetime;
+    }
+
+    public function setUpdateDatetime(?\DateTimeInterface $UpdateDatetime): self
+    {
+        $this->UpdateDatetime = $UpdateDatetime;
 
         return $this;
     }

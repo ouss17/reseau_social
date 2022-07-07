@@ -1,0 +1,43 @@
+#sidebar {
+    position: relative;
+    left: 27%;
+    top: 5%;
+    width: 60%;
+    padding: 30px;
+    font-size: 22px;
+}
+
+.sideElem {
+    margin-bottom: 30px;
+}
+
+a.active {
+    font-weight: bold;
+}
+.sideElem a {
+    color: black;
+    text-decoration: none;
+}
+
+#sidebar svg {
+    width: 30px;
+    height: 30px;
+    margin-right: 70px;
+}
+
+.sideElem .active svg {
+    fill: black;
+}
+
+.sideElem a svg {
+    fill: none;
+}
+
+.sideElem .active svg path {
+    stroke: white;
+    stroke-width: 20;
+}
+.sideElem a svg path {
+    stroke: black;
+    stroke-width: 20;
+}
