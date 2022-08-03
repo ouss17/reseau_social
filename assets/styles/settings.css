@@ -1,0 +1,125 @@
+.list-setting {
+    list-style-type: none;
+    font-size: 1.6em;
+}
+
+.list-setting a {
+    margin-top: 40px;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.setting-object {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.setting-object svg {
+    width: 18px;
+    fill: none;
+}
+
+.setting-object svg path {
+    stroke: black;
+    stroke-width: 8px;
+}
+
+.setting-object.selected {
+    font-weight: bold;
+}
+
+.setting-object.selected svg {
+    fill: black;
+}
+
+.setting-object.selected svg path {
+    stroke: none;
+}
+
+.setting-object span,
+.setting-object svg {
+    pointer-events: none;
+}
+
+.parametre-compte {
+    margin-top: 30px;
+}
+
+.icon-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.parametre-compte svg {
+    width: 30px;
+    fill: none;
+    margin: 0 20px;
+    height: 30px;
+}
+
+.parametre-compte svg path {
+    stroke-width: 28px;
+    stroke: black;
+}
+
+.description-title {
+    width: 92%;
+    margin: 0 auto;
+    color: var(--lighter-grey);
+}
+
+.list-font {
+    list-style-type: none;
+    color: black;
+    display: flex;
+    align-items: baseline;
+}
+
+.font-size {
+    margin-right: 50px;
+}
+
+.font-size.font-small {
+    font-size: 8px;
+}
+
+.font-size.font-moyen {
+    font-size: 12px;
+}
+
+.font-size.font-normal {
+    font-size: 16px;
+}
+
+.font-size.font-tall {
+    font-size: 20px;
+}
+
+.backgrounds {
+    display: flex;
+    align-items: center;
+}
+
+.background {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.background.background-white {
+    background: white;
+    margin-right: 90px;
+}
+
+.background.background-dark {
+    background: var(--dark-background);
+}
+
+#more .list-setting a {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}

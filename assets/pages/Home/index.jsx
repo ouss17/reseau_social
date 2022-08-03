@@ -1,8 +1,12 @@
 import React from 'react'
+import Posts from '../../components/Posts/Posts'
 
-const Home = () => {
+const Home = ({ posts }) => {
   return (
-    <div>Home</div>
+    <>
+      <h1 className="title-page">Accueil</h1>
+      <Posts posts={posts} />
+    </>
   )
 }
 

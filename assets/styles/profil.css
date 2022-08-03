@@ -1,0 +1,106 @@
+.bann-plus-avatar {
+    position: relative;
+}
+
+.bann-plus-avatar .banniere {
+    width: 100%;
+    background: var(--grey-color);
+    height: 200px;
+    border: none;
+}
+
+.bann-plus-avatar .avatar {
+    width: 100px;
+    height: 100px;
+    background: var(--lighter-grey);
+    border: none;
+    border-radius: 50px;
+    position: absolute;
+    left: 50%;
+    top: 98%;
+    transform: translate(-50%, -50%);
+}
+
+.container-profil {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-top: 30px;
+}
+
+.container-profil .user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-profil .user .pseudo-username {
+    font-size: 1.5em;
+}
+
+.container-profil .user .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--grey-color);
+    font-size: 1.2em;
+    padding: 40px 0;
+}
+
+.container-profil .user .actions svg {
+    width: 30px;
+    height: 30px;
+}
+
+.container-profil .user .actions svg path {
+    stroke: var(--lighter-grey);
+}
+
+.container-profil .user .action {
+    margin-left: 75px;
+}
+
+.container-profil .user .action p {
+    color: black;
+    background: var(--grey-color);
+    padding: 10px 50px;
+    border-radius: 40px;
+    font-size: 0.8em;
+}
+
+.biographie {
+    margin: 10px auto 30px auto;
+    font-style: italic;
+    font-size: 1em;
+}
+
+.relations {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-profil .sub-menu {
+    margin-top: 30px;
+}
+
+.container-profil .menu-profil {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.4em;
+    margin-bottom: 30px;
+}
+
+.container-profil .menu-profil .item-profil {
+    padding: 5px 40px;
+    width: 70px;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+}
+.container-profil .menu-profil .tab-selected {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}

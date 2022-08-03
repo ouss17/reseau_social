@@ -60,12 +60,16 @@ class Post
     #[ORM\OneToMany(mappedBy: 'IdPost', targetEntity: Unlike::class)]
     private $unlikes;
 
+    #[ORM\OneToMany(mappedBy: 'postId', targetEntity: Notification::class)]
+    private $notifications;
+
 
     public function __construct()
     {
         $this->comments = new ArrayCollection();
         $this->likes = new ArrayCollection();
         $this->unlikes = new ArrayCollection();
+        $this->notifications = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -289,6 +293,36 @@ class Post
             // set the owning side to null (unless already changed)
             if ($unlike->getIdPost() === $this) {
                 $unlike->setIdPost(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Notification>
+     */
+    public function getNotifications(): Collection
+    {
+        return $this->notifications;
+    }
+
+    public function addNotification(Notification $notification): self
+    {
+        if (!$this->notifications->contains($notification)) {
+            $this->notifications[] = $notification;
+            $notification->setPostId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNotification(Notification $notification): self
+    {
+        if ($this->notifications->removeElement($notification)) {
+            // set the owning side to null (unless already changed)
+            if ($notification->getPostId() === $this) {
+                $notification->setPostId(null);
             }
         }
 

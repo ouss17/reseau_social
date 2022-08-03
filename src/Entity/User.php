@@ -98,6 +98,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'datetime', nullable: true)]
     private $UpdateDatetime;
 
+    #[ORM\OneToMany(mappedBy: 'usernameReceiver', targetEntity: Notification::class, orphanRemoval: true)]
+    private $notifications;
+
+    #[ORM\OneToMany(mappedBy: 'usernameSender', targetEntity: Notification::class, orphanRemoval: true)]
+    private $notificationsSent;
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
@@ -108,6 +114,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->messagesReceive = new ArrayCollection();
         $this->likes = new ArrayCollection();
         $this->unlikes = new ArrayCollection();
+        $this->notifications = new ArrayCollection();
+        $this->notificationsSent = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -608,6 +616,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUpdateDatetime(?\DateTimeInterface $UpdateDatetime): self
     {
         $this->UpdateDatetime = $UpdateDatetime;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Notification>
+     */
+    public function getNotifications(): Collection
+    {
+        return $this->notifications;
+    }
+
+    public function addNotification(Notification $notification): self
+    {
+        if (!$this->notifications->contains($notification)) {
+            $this->notifications[] = $notification;
+            $notification->setUsernameReceiver($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNotification(Notification $notification): self
+    {
+        if ($this->notifications->removeElement($notification)) {
+            // set the owning side to null (unless already changed)
+            if ($notification->getUsernameReceiver() === $this) {
+                $notification->setUsernameReceiver(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Notification>
+     */
+    public function getNotificationsSent(): Collection
+    {
+        return $this->notificationsSent;
+    }
+
+    public function addNotificationsSent(Notification $notificationsSent): self
+    {
+        if (!$this->notificationsSent->contains($notificationsSent)) {
+            $this->notificationsSent[] = $notificationsSent;
+            $notificationsSent->setUsernameSender($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNotificationsSent(Notification $notificationsSent): self
+    {
+        if ($this->notificationsSent->removeElement($notificationsSent)) {
+            // set the owning side to null (unless already changed)
+            if ($notificationsSent->getUsernameSender() === $this) {
+                $notificationsSent->setUsernameSender(null);
+            }
+        }
 
         return $this;
     }
