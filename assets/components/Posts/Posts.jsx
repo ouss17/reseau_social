@@ -4,13 +4,13 @@ import { ArrowDown, ArrowUp, Comment, Heart } from '../Svg/Svgs'
 
 const Posts = ({posts}) => {
     return (
-        <div id="posts">
+        <div id="posts" className='fade-In-LeftToRight'>
             {posts.map((post) => (
                 <div className='post' key={post.idPost}>
                     <div className="avatar-user">
                         <img src={post.avatar} alt="avatar user" />
                     </div>
-                    <p className="infos-user">{post.pseudo} <span className="username">{post.username} - {post.creationDatetime}</span></p>
+                    <p className="infos-user">{post.pseudo} <span className="username">@{post.username} - {post.creationDatetime}</span></p>
                     <Link to={"/post/" + post.idPost}>
                         {
                             post.content !== "" &&

@@ -22,7 +22,7 @@ const Parametres = () => {
   return (
     <>
       <h1 className="title-page">Paramètres</h1>
-      <div id='settings'>
+      <div id='settings' className='fade-In-LeftToRight'>
 
         <ul className='list-setting'>
           <Link to={"compte"} ><li id="setting-compte" className='setting-object' ref={itemRef} onClick={onSelectTabs}><span>Mon Compte</span> <ChevronRight /> </li></Link>

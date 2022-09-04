@@ -17,14 +17,18 @@ import DetailPost from "./pages/DetailPost";
 import Compte from "./pages/Parametres/Compte";
 import Affichage from "./pages/Parametres/Affichage";
 import More from "./pages/Parametres/More";
+import About from "./pages/Parametres/More/About";
+import Usage from "./pages/Parametres/More/Usage";
+import Cookies from "./pages/Parametres/More/Cookies";
+import Users from "./pages/Admin/Users";
+import Posts from "./pages/Admin/Posts";
+import DetailsMessages from "./pages/Messages/DetailsMessages";
 
 
 import { dataPosts } from "./components/data/post";
 import { dataUser } from "./components/data/user";
 import { dataNotifs } from "./components/data/notif";
-import About from "./pages/Parametres/More/About";
-import Usage from "./pages/Parametres/More/Usage";
-import Cookies from "./pages/Parametres/More/Cookies";
+import { dataMessages } from "./components/data/message";
 
 function App() {
 
@@ -34,14 +38,18 @@ function App() {
                 <Route path="/" element={<Home posts={dataPosts} />} />
                 <Route path="/post/:id" element={<DetailPost posts={dataPosts} />} />
                 <Route path="/notifications" element={<Notifications notifs={dataNotifs} />} />
-                <Route path="/messages" element={<Messages />} />
+                <Route path="/messages" element={<Messages messages={dataMessages} />} />
+                <Route path="messages/details_messages/:id" element={<DetailsMessages messages={dataMessages} user={dataUser} />} />
                 <Route path="/profil" element={<Profil user={dataUser} posts={dataPosts} />} />
                 <Route path="/parametres" element={<Parametres />}>
                     <Route path="compte" element={<Compte />} />
                     <Route path="affichage" element={<Affichage />} />
                     <Route path="more" element={<More />} />
                 </Route>
-                <Route path="/admin" element={<Admin />} />
+                <Route path="/admin" element={<Admin />} >
+                    <Route path="users" element={<Users />} />
+                    <Route path="posts" element={<Posts />} />
+                </Route>
             </Route>
             <Route path="/about" element={<About />} />
             <Route path="/usage" element={<Usage />} />

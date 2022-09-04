@@ -6,7 +6,7 @@ const More = () => {
     return (
         <>
             <h1 className="title-page">Plus</h1>
-            <div id="more">
+            <div id="more" className='fade-In-LeftToRight'>
                 <ul className='list-setting'>
                     <Link to={"about"} ><li id="setting-compte" className='setting-object'><span>À propos</span> <ChevronRight /> </li></Link>
                     <Link to={"usage"} ><li id="setting-affichage" className='setting-object'><span>Conditions d'utilisation</span> <ChevronRight /> </li></Link>

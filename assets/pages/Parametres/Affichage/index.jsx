@@ -5,7 +5,7 @@ const Affichage = () => {
     return (
         <>
             <h1 className="title-page">Affichage</h1>
-            <div id="affichage">
+            <div id="affichage" className='fade-In-LeftToRight'>
 
                 <div className="parametre-compte">
                     <div className="icon-title">

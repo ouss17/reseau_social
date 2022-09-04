@@ -46,7 +46,7 @@ const Profil = ({ user, posts }) => {
   return (
     <>
       <h1 className="title-page">Profil</h1>
-      <div id="profil">
+      <div id="profil" className='fade-In-LeftToRight'>
         <div className="bann-plus-avatar">
           <img className='banniere' src={user.banniere} alt="" />
           <img className='avatar' src={user.avatar} alt="" />
@@ -56,7 +56,7 @@ const Profil = ({ user, posts }) => {
           <div className="user">
             <div className="pseudo-username">
               <p className="pseudo">{user.pseudo}</p>
-              <p className="username">{user.username}</p>
+              <p className="username">@{user.username}</p>
             </div>
             <div className="actions">
               <Exchanges />

@@ -8,14 +8,12 @@ import '../../styles/post.css'
 import Compte from '../../pages/Parametres/Compte';
 import Affichage from '../../pages/Parametres/Affichage';
 import More from '../../pages/Parametres/More';
+import Users from '../../pages/Admin/Users';
+import Posts from '../../pages/Admin/Posts';
 
 
 const Layout = ({ miniUser }) => {
     let location = useLocation();
-    useEffect(() => {
-        console.log(location.pathname.split("/").includes("parametres"));
-        console.log(location.pathname.split("/").includes("admin"));
-    }, [location]);
     return (
         <div className='layout'>
             <div className="left-layout">
@@ -37,6 +35,8 @@ const Layout = ({ miniUser }) => {
                 {location.pathname == "/parametres/compte" && <Compte />}
                 {location.pathname == "/parametres/affichage" && <Affichage />}
                 {location.pathname == "/parametres/more" && <More />}
+                {location.pathname == "/admin/users" && <Users />}
+                {location.pathname == "/admin/posts" && <Posts />}
                 {
                     (location.pathname.split("/").includes("admin") == false
                     &&

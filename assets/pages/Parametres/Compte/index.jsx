@@ -6,7 +6,7 @@ const Compte = () => {
     return (
         <>
             <h1 className="title-page">Votre Compte</h1>
-            <div id="compte">
+            <div id="compte" className='fade-In-LeftToRight'>
                 <div className="parametre-compte">
                     <div className="icon-title">
                         <Users />

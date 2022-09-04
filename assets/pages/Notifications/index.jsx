@@ -8,7 +8,7 @@ const Notifications = ({ notifs }) => {
     return (
         <>
             <h1 className="title-page">Notifications</h1>
-            <div id='notifications'>
+            <div id='notifications' className='fade-In-LeftToRight'>
                 {
                     notifs.map((notif, index) => (
                         <div className="notification" key={index} >

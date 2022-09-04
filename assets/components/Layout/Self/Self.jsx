@@ -7,7 +7,7 @@ const Self = ({ miniUser }) => {
                 <img src={miniUser.avatar} alt="avatar user" />
             </div>
             <p className="pseudo">{miniUser.pseudo}</p>
-            <p className="username">{miniUser.username}</p>
+            <p className="username">@{miniUser.username}</p>
 
         </div>
     )

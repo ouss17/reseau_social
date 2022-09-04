@@ -24,6 +24,9 @@ class Message
     #[ORM\Column(type: 'text')]
     private $Content;
 
+    #[ORM\Column(type: 'datetime')]
+    private $DateSend;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +64,18 @@ class Message
     public function setContent(string $Content): self
     {
         $this->Content = $Content;
+
+        return $this;
+    }
+
+    public function getDateSend(): ?\DateTimeInterface
+    {
+        return $this->DateSend;
+    }
+
+    public function setDateSend(\DateTimeInterface $DateSend): self
+    {
+        $this->DateSend = $DateSend;
 
         return $this;
     }

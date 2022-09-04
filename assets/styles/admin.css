@@ -1,0 +1,44 @@
+.list-admin {
+    list-style-type: none;
+    font-size: 1.6em;
+}
+
+.list-admin a {
+    margin-top: 40px;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.admin-object {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-object svg {
+    width: 18px;
+    fill: none;
+}
+
+.admin-object svg path {
+    stroke: black;
+    stroke-width: 8px;
+}
+
+.admin-object.selected {
+    font-weight: bold;
+}
+
+.admin-object.selected svg {
+    fill: black;
+}
+
+.admin-object.selected svg path {
+    stroke: none;
+}
+
+.admin-object span,
+.admin-object svg {
+    pointer-events: none;
+}
