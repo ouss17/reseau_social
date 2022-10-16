@@ -3,6 +3,42 @@
     position: relative;
 }
 
+.header-responsive {
+    display: none;
+    height: 70px;
+    z-index: 10000;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: white;
+}
+
+.header-responsive img {
+    width: 30px;
+    height: 30px;
+    border-radius: 65px;
+    background-color: black;
+    margin-right: auto;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.title-main-respo {
+    margin-right: auto;
+    transform: translateX(-21px);
+    font-size: 1.8em;
+}
+
+.title-main-respo svg {
+    width: 20px;
+    height: 20px;
+}
+
+.title-main-respo a {
+    color: black;
+    text-decoration: none;
+}
+
 .left-layout,
 .right-layout {
     width: 25%;
@@ -14,11 +50,44 @@
     overflow: auto;
 }
 
-.left-layout{
+.left-layout {
     border-right: 1px solid var(--grey-color);
+    transition: all 500ms;
+    display: block;
+}
+.respo-left-layout {
+    display: none;
 }
 
-.right-layout{
+.cross-close {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.8em;
+    color: var(--lighter-grey);
+    cursor: pointer;
+}
+
+.burger-responsive {
+    display: none;
+    position: absolute;
+    left: 73%;
+    background: white;
+    padding: 20px 20px 20px 80px;
+    border-radius: 65px;
+    z-index: 1000000;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.burger-responsive svg {
+    width: 40px;
+    height: 40px;
+}
+
+.right-layout {
     border-left: 1px solid var(--grey-color);
     right: 0;
 }
@@ -29,9 +98,10 @@
     height: 100vh;
     max-height: 100vh;
     overflow: auto;
+    transition: all 500ms;
 }
 
-.container{
+.container {
     width: 90%;
     margin: 0 auto;
     position: relative;
@@ -84,6 +154,50 @@
     color: #7d7d7d;
 }
 
-#posts, #notifications, #profil, #messages, #settings, #admin, #compte, #affichage, #more {
+#posts,
+#notifications,
+#profil,
+#messages,
+#settings,
+#admin,
+#compte,
+#affichage,
+#more {
     padding-top: 80px;
+}
+
+@media (max-width: 800px) {
+    .header-responsive {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .left-layout {
+        display: none;
+    }
+    .respo-left-layout {
+        display: block;
+        position: absolute;
+        background: white;
+        width: 70%;
+        z-index: 100000;
+    }
+
+    .cross-close {
+        display: block;
+    }
+
+    .burger-responsive {
+        display: block;
+    }
+
+    .right-layout,
+    .self-layout {
+        display: none;
+    }
+
+    .center-layout {
+        width: 100%;
+        padding-top: 70px;
+    }
 }

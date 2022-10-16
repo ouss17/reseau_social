@@ -7,7 +7,6 @@
     margin-top: 40px;
     display: block;
     text-decoration: none;
-    color: black;
 }
 
 .setting-object {
@@ -22,16 +21,11 @@
 }
 
 .setting-object svg path {
-    stroke: black;
     stroke-width: 8px;
 }
 
 .setting-object.selected {
     font-weight: bold;
-}
-
-.setting-object.selected svg {
-    fill: black;
 }
 
 .setting-object.selected svg path {
@@ -62,7 +56,6 @@
 
 .parametre-compte svg path {
     stroke-width: 28px;
-    stroke: black;
 }
 
 .description-title {
@@ -73,7 +66,6 @@
 
 .list-font {
     list-style-type: none;
-    color: black;
     display: flex;
     align-items: baseline;
 }

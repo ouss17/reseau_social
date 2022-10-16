@@ -270,6 +270,14 @@
     }
 }
 
+@media (max-width: 800px) {
+    .footer-login {
+        padding: 20px 5px;
+    }
+    .footer-list {
+        width: 100%;
+    }
+}
 @media (max-width: 412px) {
     .register {
         width: 80%;

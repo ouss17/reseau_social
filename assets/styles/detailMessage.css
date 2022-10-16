@@ -61,3 +61,15 @@
     height: 50px;
     bottom: 0;
 }
+
+@media (max-width: 800px) {
+    .message-object.message-left {
+        max-width: 86%;
+    }
+    .message-object.message-right {
+        right: -20%;
+    }
+    .message-object {
+        max-width: 78%;
+    }
+}

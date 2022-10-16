@@ -7,7 +7,6 @@
     margin-top: 40px;
     display: block;
     text-decoration: none;
-    color: black;
 }
 
 .admin-object {
@@ -22,16 +21,11 @@
 }
 
 .admin-object svg path {
-    stroke: black;
     stroke-width: 8px;
 }
 
 .admin-object.selected {
     font-weight: bold;
-}
-
-.admin-object.selected svg {
-    fill: black;
 }
 
 .admin-object.selected svg path {

@@ -5,7 +5,7 @@
     --blue-color: #003764;
     --skyBlue-color: rgb(29, 155, 240);
     --lighter-grey: #adadad;
-    --dark-background: #202327;
+    --dark-background: rgba(32, 35, 39, 1);
 }
 
 /* paramaetres des Animations*/

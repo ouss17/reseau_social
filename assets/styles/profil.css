@@ -91,6 +91,7 @@
     justify-content: space-around;
     font-size: 1.4em;
     margin-bottom: 30px;
+    overflow-x: auto;
 }
 
 .container-profil .menu-profil .item-profil {
