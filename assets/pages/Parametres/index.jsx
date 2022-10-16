@@ -39,6 +39,12 @@ const Parametres = () => {
           .right-layout {
             width: 45%;
           }
+          @media (max-width: 800px) {
+            .center-layout {
+                width: 100%;
+                padding-top: 70px;
+            }
+          }
         `}
       </style>
     </>

@@ -35,6 +35,21 @@ const Compte = () => {
                     </div>
                 </div>
             </div>
+            <style jsx="true">
+                {`
+
+                @media (max-width: 800px) {
+                    .center-layout {
+                        display:none;
+                    }
+                    .right-layout {
+                        display:block;
+                        width: 100%;
+                        padding-top: 70px;
+                    }
+                }
+                `}
+            </style>
         </>
     )
 }

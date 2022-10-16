@@ -34,6 +34,14 @@ const Admin = () => {
           .right-layout {
             width: 70%;
           }
+
+          @media (max-width: 800px) {
+              .center-layout {
+                  width: 100%;
+                  padding-top: 70px;
+              }
+          }
+
         `}
       </style>
     </>

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from './pages/Login';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 
 import './styles/app.css';
@@ -29,33 +29,45 @@ import { dataPosts } from "./components/data/post";
 import { dataUser } from "./components/data/user";
 import { dataNotifs } from "./components/data/notif";
 import { dataMessages } from "./components/data/message";
+import SettingsContext, { SettingsContextProvider } from "./context/SettingsContext";
 
 function App() {
 
+    const context = useContext(SettingsContext);
+    const [settings, setSettings] = useState({
+        background: !context.darkMode ? "white" : "rgba(32,35,39,1)",
+        textColor: !context.darkMode ? "black" : "white",
+        darkMode: true,
+        isLogged: false,
+        fontSize: "12px",
+    })
+
     return (
-        <Routes>
-            <Route path="/" element={<Layout miniUser={dataUser} />}>
-                <Route path="/" element={<Home posts={dataPosts} />} />
-                <Route path="/post/:id" element={<DetailPost posts={dataPosts} />} />
-                <Route path="/notifications" element={<Notifications notifs={dataNotifs} />} />
-                <Route path="/messages" element={<Messages messages={dataMessages} />} />
-                <Route path="messages/details_messages/:id" element={<DetailsMessages messages={dataMessages} user={dataUser} />} />
-                <Route path="/profil" element={<Profil user={dataUser} posts={dataPosts} />} />
-                <Route path="/parametres" element={<Parametres />}>
-                    <Route path="compte" element={<Compte />} />
-                    <Route path="affichage" element={<Affichage />} />
-                    <Route path="more" element={<More />} />
+        <SettingsContextProvider value={{ settings, setSettings }}>
+            <Routes>
+                <Route path="/" element={<Layout miniUser={dataUser} />}>
+                    <Route path="/" element={<Home posts={dataPosts} />} />
+                    <Route path="/post/:id" element={<DetailPost posts={dataPosts} />} />
+                    <Route path="/notifications" element={<Notifications notifs={dataNotifs} />} />
+                    <Route path="/messages" element={<Messages messages={dataMessages} />} />
+                    <Route path="messages/details_messages/:id" element={<DetailsMessages messages={dataMessages} user={dataUser} />} />
+                    <Route path="/profil" element={<Profil user={dataUser} posts={dataPosts} />} />
+                    <Route path="/parametres" element={<Parametres />}>
+                        <Route path="compte" element={<Compte />} />
+                        <Route path="affichage" element={<Affichage />} />
+                        <Route path="more" element={<More />} />
+                    </Route>
+                    <Route path="/admin" element={<Admin />} >
+                        <Route path="users" element={<Users />} />
+                        <Route path="posts" element={<Posts />} />
+                    </Route>
                 </Route>
-                <Route path="/admin" element={<Admin />} >
-                    <Route path="users" element={<Users />} />
-                    <Route path="posts" element={<Posts />} />
-                </Route>
-            </Route>
-            <Route path="/about" element={<About />} />
-            <Route path="/usage" element={<Usage />} />
-            <Route path="/cookies" element={<Cookies />} />
-            <Route path="/login" element={<Login />} />
-        </Routes>
+                <Route path="/about" element={<About />} />
+                <Route path="/usage" element={<Usage />} />
+                <Route path="/cookies" element={<Cookies />} />
+                <Route path="/login" element={<Login />} />
+            </Routes>
+        </SettingsContextProvider>
 
     );
 }

@@ -38,13 +38,13 @@ const ListItem = styled.li`
  *
  * ```
  */
-const SideElem = ({ link, label, icon }) => {
+const SideElem = ({ link, label, icon, CloseMenu }) => {
     icon = icon || <FontAwesomeIcon icon="fa-solid fa-user" />;
     label = label || "Label";
 
     return (
         <div className="sideElem">
-            <NavLink to={link}>
+            <NavLink to={link} onClick={CloseMenu}>
                 <IconLabel>{icon} {label}</IconLabel>
             </NavLink>
         </div>
